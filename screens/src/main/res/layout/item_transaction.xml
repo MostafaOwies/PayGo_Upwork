@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemObj"
+            type="com.core.base.oldbase.MockItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/pad_small"
+
+        app:cardCornerRadius="@dimen/pad_med"
+        app:cardElevation="@dimen/pad_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pad_med">
+
+            <ImageView
+                android:id="@+id/bill_IV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bill_image"
+                android:padding="@dimen/pad_med"
+                android:src="@drawable/ic_bill"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{itemObj.name}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/txt_med"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_status"
+                app:layout_constraintStart_toEndOf="@id/bill_IV"
+                app:layout_constraintTop_toTopOf="@+id/tv_status" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/_50_00"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorPrim"
+                android:textSize="@dimen/txt_med"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_date" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:background="@drawable/border_with_radius"
+                android:backgroundTint="@color/tvColorGreen"
+                android:maxLines="1"
+                android:paddingStart="@dimen/pad_small"
+                android:paddingEnd="@dimen/pad_small"
+                android:text="@string/paid"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/more_IV"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:maxLines="1"
+                android:text="@string/_21_09_2022"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="@dimen/txt_med"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/more_IV"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+
+            <ImageView
+                android:id="@+id/more_IV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/more_menu"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

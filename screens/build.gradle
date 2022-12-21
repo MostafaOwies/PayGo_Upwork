@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.source_compatibility
+        targetCompatibility versions.target_compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.jvm_target
+    }
+
+    dataBinding { enabled = true }
+    viewBinding { enabled = true }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(path: ':base')
+    api project(path: ':data')
+    api project(path: ':resources')
+    api project(path: ':utils')
+    api project(path: ':domain')
+
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_layout_version"
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    //navigationUI
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    // Dynamic Feature Module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
+
+    //Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+//    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    //scalable
+    implementation "com.intuit.sdp:sdp-android:$scalable_version"
+    implementation "com.intuit.ssp:ssp-android:$scalable_version"
+
+    //country code picker
+    implementation "com.hbb20:ccp:$country_code_picker_version"
+
+    implementation 'androidx.room:room-runtime:2.4.3'
+    implementation "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+}

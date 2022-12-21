@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_small"
+                android:elevation="@dimen/pad_small"
+                app:boxStrokeColor="@color/colorPrim"
+                app:hintTextColor="@color/colorPrim"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/amount"
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/pad_med"
+                    android:textSize="@dimen/txt_med" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <include
+                android:id="@+id/discount_options"
+                layout="@layout/layout_discount_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_med"
+                app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+            <include
+                android:id="@+id/tip_options"
+                layout="@layout/layout_tip_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_med"
+                app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+            <include
+                android:id="@+id/payment_methods_content"
+                layout="@layout/layout_payment_methods_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_med" />
+
+            <include
+                android:id="@+id/total_money"
+                layout="@layout/layout_total_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_med" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="@dimen/pad_small"
+                android:paddingHorizontal="@dimen/pad_large"
+                android:paddingVertical="@dimen/pad_small"
+                android:text="@string/charge"
+                android:textAllCaps="false"
+                android:textSize="@dimen/txt_med"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

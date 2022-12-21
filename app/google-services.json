@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "9543420159",
+    "project_id": "paygo-128d7",
+    "storage_bucket": "paygo-128d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9543420159:android:385dea665f6edb331da4ca",
+        "android_client_info": {
+          "package_name": "com.ordergo.paygop2p"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9543420159-grubt93u31c6igcn8h0b02l30gdr6h0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ordergo.paygop2p",
+            "certificate_hash": "cd9e86c75a06147464a98678fc20babcec622144"
+          }
+        },
+        {
+          "client_id": "9543420159-mm47snq1higjptb65jqf59h6006bt6fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWdOPh8_ECV8vo5r9QcRE9ZEtFboeemAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9543420159-mm47snq1higjptb65jqf59h6006bt6fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemObj"
+            type="com.core.domain.entities.Favorites" />
+
+        <variable
+            name="clickListener"
+            type="com.core.screens.ui.favorites.FavouriteClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/pad_small"
+        android:onClick="@{()-> clickListener.onItemClicked(itemObj.favoritesId,itemObj)}"
+        app:cardCornerRadius="@dimen/pad_med"
+        app:cardElevation="@dimen/pad_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pad_small">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_card_view_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:contentDescription="@string/item_image"
+                android:elevation="@dimen/pad_small"
+                app:cardCornerRadius="@dimen/pad_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/item_image_fav"
+                    android:layout_width="@dimen/image_square"
+                    android:layout_height="@dimen/image_square"
+                    android:contentDescription="@string/menu_item_image"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/burger_test" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:text="@{itemObj.name}"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image_card_view_fav"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/is_favorite_img_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:contentDescription="@string/fav_icon"
+                android:onClick="@{()-> clickListener.onDeleteItemClicked(itemObj.favoritesId)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fav_selected"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/colorPrim" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:backgroundTint="@color/colorPrim"
+                app:cardCornerRadius="@dimen/extremeRadius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/total_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@string/_50_00"
+                    android:textColor="@color/white_base"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

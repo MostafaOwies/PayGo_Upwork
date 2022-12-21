@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CodeInputStyle" parent="Widget.AppCompat.EditText">
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/white_base</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">@dimen/txt_large</item>
+        <item name="android:padding">@dimen/_9sdp</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:inputType">number</item>
+
+    </style>
+
+    <style name="CustomDropDownTilStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+        <item name="background">@drawable/text_input_selector</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="endIconDrawable">@drawable/ic_arrow_down_details</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="hintEnabled">false</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.App.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/_3sdp</item>
+
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="android:textColor">@color/colorPrimDark</item>
+
+        <item name="buttonTint">@color/check_box_tint</item>
+    </style>
+
+</resources>

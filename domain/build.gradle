@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.source_compatibility
+        targetCompatibility versions.target_compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.jvm_target
+    }
+
+    dataBinding { enabled = true }
+    viewBinding { enabled = true }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Room
+    implementation 'com.google.code.gson:gson:2.10'
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+
+}

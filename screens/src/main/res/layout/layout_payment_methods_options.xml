@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/pad_med"
+    android:layout_marginTop="@dimen/pad_xlarge">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkout_Payment_options"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/txt_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_payment_methods"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/pad_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <RadioButton
+            android:id="@+id/rb_cash"
+            style="@style/Widget.App.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/checkout_payment_method_cash"
+            android:textSize="@dimen/txt_small" />
+
+        <RadioButton
+            android:id="@+id/rb_online"
+            style="@style/Widget.App.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkout_payment_method_online"
+            android:textSize="@dimen/txt_small"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <RadioButton
+            android:id="@+id/rb_card"
+            style="@style/Widget.App.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkout_payment_method_card"
+            android:textSize="@dimen/txt_small" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/key_container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/pad_small"
+        android:layout_marginTop="@dimen/pad_small"
+        android:layout_marginEnd="@dimen/pad_xxlarge"
+        android:elevation="@dimen/pad_small"
+        app:boxBackgroundColor="@color/white_base"
+        app:boxStrokeColor="@color/colorPrim"
+        app:endIconMode="dropdown_menu"
+        app:hintTextColor="@color/colorPrim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_payment_methods">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/sp_integration_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white_base"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:hint="@string/integration_type"
+            android:inputType="textNoSuggestions"
+            android:padding="@dimen/pad_small"
+            android:textSize="@dimen/txt_med"
+            tools:text="Option Input" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/pad_med"
+        android:layout_marginBottom="@dimen/pad_med"
+        android:background="@color/lightgrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key_container" />
+</androidx.constraintlayout.widget.ConstraintLayout>

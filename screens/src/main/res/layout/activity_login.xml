@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        android:paddingVertical="@dimen/pad_xlarge"
+        tools:context=".ui.Activity.LoginActivity">
+
+        <ImageView
+            android:id="@+id/phone_image"
+            android:layout_width="@dimen/mobile_image_size"
+            android:layout_height="@dimen/mobile_image_size"
+            android:contentDescription="@string/code_verification_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_large"
+            android:text="@string/your_mobile_number"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_image" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/login_phone_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="ccp,login_phone_et" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_large"
+            android:background="@color/white_base"
+            android:paddingVertical="@dimen/pad_small"
+            android:paddingLeft="@dimen/pad_small"
+            app:ccp_customMasterCountries="EG,GB"
+            app:ccp_defaultNameCode="GB"
+            app:ccp_showNameCode="false"
+            app:ccp_textSize="@dimen/txt_large"
+            app:layout_constraintLeft_toLeftOf="@+id/send_code_btn"
+            app:layout_constraintTop_toBottomOf="@+id/login_title" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_phone_et"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_corners_stroke_gray"
+            android:backgroundTint="@color/white_base"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="20"
+            android:paddingHorizontal="@dimen/pad_small"
+            android:textSize="@dimen/txt_large"
+            app:layout_constraintBottom_toBottomOf="@+id/ccp"
+            app:layout_constraintLeft_toRightOf="@+id/ccp"
+            app:layout_constraintRight_toRightOf="@+id/send_code_btn"
+            app:layout_constraintTop_toTopOf="@+id/ccp" />
+
+
+        <TextView
+            android:id="@+id/ordergo_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_med"
+            android:text="@string/ordergo_does_not_retain_any_personal_data"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_phone_et" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send_code_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pad_xxlarge"
+            android:layout_marginTop="@dimen/pad_large"
+            android:paddingVertical="@dimen/pad_small"
+            android:text="@string/send"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_med"
+            app:backgroundTint="@color/colorPrim"
+            app:elevation="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/ordergo_message"
+            app:rippleColor="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/copyright_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_xxlarge"
+            android:text="@string/copyright"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/send_code_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

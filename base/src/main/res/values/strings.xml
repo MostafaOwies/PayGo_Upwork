@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BaseFiles</string>
+
+    <!--App Error Message-->
+    <!--    <string name="api_retry_error" translatable="false">Please retry!</string>-->
+
+    <string name="failure_network_connection">لا يوجد اتصال بالانترنت</string>
+    <string name="failure_server_error">Server Error</string>
+    <string name="error">Error!</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+
+</resources>

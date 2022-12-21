@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/pad_med"
+    android:layout_marginTop="@dimen/pad_xlarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/subtotal_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/subtotal_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtotal_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/subtotal_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/subtotal_title_tv" />
+
+    <TextView
+        android:id="@+id/discount_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/discount_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/subtotal_title_tv"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/discount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/discount_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/discount_title_tv"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/discount_optional_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/optional_discount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/discount_title_tv"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/discount_optional_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/discount_optional_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/discount_optional_title_tv"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tip_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/tip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/discount_optional_title_tv" />
+
+    <TextView
+        android:id="@+id/tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tip_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/tip_title_tv" />
+
+    <TextView
+        android:id="@+id/pay_charge_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/pay_charge_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/tip_title_tv" />
+
+    <TextView
+        android:id="@+id/pay_charge_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pay_charge_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/pay_charge_title_tv" />
+
+    <TextView
+        android:id="@+id/service_charge_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/checkout_service_charge"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/pay_charge_title_tv" />
+
+    <TextView
+        android:id="@+id/service_charge_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/service_charge_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/service_charge_title_tv" />
+
+    <TextView
+        android:id="@+id/vat_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_med"
+        android:text="@string/vat_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/service_charge_title_tv" />
+
+    <TextView
+        android:id="@+id/vat_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_med"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/vat_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/vat_title_tv" />
+
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/pad_med"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vat_title_tv" />
+
+    <TextView
+        android:id="@+id/nta_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_large"
+        android:text="@string/net_amount_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4" />
+
+    <TextView
+        android:id="@+id/nta_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_currency"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimDark"
+        android:textSize="@dimen/txt_large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/nta_title_tv"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_tv"
+        app:layout_constraintTop_toTopOf="@+id/nta_title_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

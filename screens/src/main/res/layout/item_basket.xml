@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemObj"
+            type="com.core.domain.entities.OrderProduct" />
+
+        <variable
+            name="clickListener"
+            type="com.core.screens.ui.basket.BasketClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_basket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/pad_small"
+        android:onClick="@{()-> clickListener.onItemClicked(itemObj.ProductId)}"
+        app:cardCornerRadius="@dimen/pad_med"
+        app:cardElevation="@dimen/pad_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pad_small">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_card_view_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_small"
+                android:contentDescription="@string/item_image"
+                android:elevation="@dimen/pad_small"
+                app:cardCornerRadius="@dimen/pad_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/basket_item_image"
+                    android:layout_width="@dimen/image_square"
+                    android:layout_height="@dimen/image_square"
+                    android:contentDescription="@string/menu_item_image"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/burger_test" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/basket_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                android:text="@{itemObj.name}"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/txt_large"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image_card_view_basket"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/is_delete_from_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_small"
+                android:layout_marginEnd="@dimen/pad_small"
+                android:contentDescription="@string/fav_icon"
+                android:onClick="@{()-> clickListener.onDeleteItemClicked(itemObj.ProductId)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorRed" />
+
+            <include
+                android:id="@+id/qty_layout"
+                layout="@layout/qty_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_card_view_basket" />
+
+            <TextView
+                android:id="@+id/basket_item_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_med"
+                android:textSize="@dimen/txt_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

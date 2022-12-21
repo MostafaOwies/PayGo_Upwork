@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        android:paddingVertical="@dimen/pad_xlarge"
+        tools:context=".ui.Activity.LoginActivity">
+
+        <ImageView
+            android:id="@+id/phone_image"
+            android:layout_width="@dimen/mobile_image_size"
+            android:layout_height="@dimen/mobile_image_size"
+            android:contentDescription="@string/code_verification_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_large"
+            android:text="@string/confirmcode"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_image" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code1_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginTop="@dimen/pad_large"
+            android:hint=""
+            android:imeOptions="actionNext"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="@+id/confirm_code_btn"
+            app:layout_constraintRight_toLeftOf="@+id/code2_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/login_title" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code2_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:hint=""
+            android:imeOptions="actionNext"
+            app:layout_constraintBottom_toBottomOf="@+id/code1_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/code1_edit_text"
+            app:layout_constraintRight_toLeftOf="@+id/code3_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/code1_edit_text" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code3_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:hint=""
+            android:imeOptions="actionNext"
+            app:layout_constraintBottom_toBottomOf="@+id/code1_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/code2_edit_text"
+            app:layout_constraintRight_toLeftOf="@+id/code4_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/code1_edit_text" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code4_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:hint=""
+            android:imeOptions="actionNext"
+            app:layout_constraintBottom_toBottomOf="@+id/code1_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/code3_edit_text"
+            app:layout_constraintRight_toLeftOf="@+id/code5_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/code1_edit_text" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code5_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:hint=""
+            android:imeOptions="actionNext"
+            app:layout_constraintBottom_toBottomOf="@+id/code1_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/code4_edit_text"
+            app:layout_constraintRight_toLeftOf="@+id/code6_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/code1_edit_text" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code6_edit_text"
+            style="@style/CodeInputStyle"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:hint=""
+            android:imeOptions="actionDone"
+            app:layout_constraintBottom_toBottomOf="@+id/code1_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/code5_edit_text"
+            app:layout_constraintRight_toRightOf="@+id/confirm_code_btn"
+            app:layout_constraintTop_toTopOf="@+id/code1_edit_text" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_code_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pad_xxlarge"
+            android:layout_marginTop="@dimen/pad_large"
+            android:paddingVertical="@dimen/pad_small"
+            android:text="@string/confirm"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_med"
+            app:backgroundTint="@color/colorPrim"
+            app:elevation="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/code1_edit_text"
+            app:rippleColor="@color/colorAccent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resend_code_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pad_xxlarge"
+            android:layout_marginTop="@dimen/pad_large"
+            android:paddingVertical="@dimen/pad_small"
+            android:text="@string/resend_code"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/white_base"
+            android:textSize="@dimen/txt_small"
+            app:backgroundTint="@color/colorPrimDark"
+            app:elevation="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_code_btn"
+            app:rippleColor="@color/colorAccent"
+            tools:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/copyright_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_xxlarge"
+            android:text="@string/copyright"
+            android:textColor="@color/colorPrimDark"
+            android:textSize="@dimen/txt_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resend_code_btn" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/login_code_input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="code1_edit_text,code2_edit_text,code3_edit_text,code4_edit_text,code5_edit_text,code6_edit_text"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

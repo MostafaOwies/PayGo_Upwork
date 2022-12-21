@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.source_compatibility
+        targetCompatibility versions.target_compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.jvm_target
+    }
+
+    dataBinding { enabled = true }
+    viewBinding { enabled = true }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(path: ':utils')
+
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    implementation "androidx.datastore:datastore-preferences:$preference_version"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+}

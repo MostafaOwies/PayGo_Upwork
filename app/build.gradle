@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        applicationId versions.applicationId
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.source_compatibility
+        targetCompatibility versions.target_compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.jvm_target
+    }
+
+    dataBinding { enabled = true }
+    viewBinding { enabled = true }
+}
+
+dependencies {
+    implementation project(path: ':screens')
+
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'com.google.firebase:firebase-firestore:24.4.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+}

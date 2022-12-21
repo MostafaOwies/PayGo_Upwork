@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/stroke_light_gray"
+        android:fillViewport="true"
+        android:padding="@dimen/pad_med">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/transaction_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/pad_med"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation">
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:text="@string/transactions"
+                    android:textAlignment="viewEnd"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/black_resources"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_swap_horizontal_white_24dp"
+                    app:drawableTint="@color/tvColorBlue" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

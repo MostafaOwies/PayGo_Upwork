@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white_base">#FFFFFFFF</color>
+    <color name="loading_bg">#ffffff</color>
+    <color name="loading_bg_fade">#52000000</color>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/quantity_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:layout_margin="@dimen/pad_med"
+    android:background="@drawable/back_border_gray"
+    android:weightSum="3">
+
+    <TextView
+        android:id="@+id/subtract_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white_base"
+        android:paddingHorizontal="@dimen/pad_xlarge"
+        android:text="@string/subtract_sign"
+        android:textAlignment="center"
+        android:textColor="@color/black_resources"
+        android:textSize="@dimen/txt_xlarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:alpha="0.3"
+        android:background="@color/white_base"
+        android:gravity="center"
+        android:maxLength="3"
+        android:paddingHorizontal="@dimen/pad_xlarge"
+        android:text="@string/_1"
+        android:textAlignment="center"
+        android:textColor="@color/black_resources"
+        android:textSize="@dimen/txt_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/add_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white_base"
+        android:paddingHorizontal="@dimen/pad_xlarge"
+        android:text="@string/add_sign"
+        android:textAlignment="center"
+        android:textColor="@color/black_resources"
+        android:textSize="@dimen/txt_xlarge"
+        android:textStyle="bold" />
+</LinearLayout>

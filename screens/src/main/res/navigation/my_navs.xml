@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navs.xml"
+    app:startDestination="@id/billFragment">
+
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.core.screens.ui.basket.BasketFragment"
+        android:label="Basket"
+        tools:layout="@layout/fragment_basket">
+        <action
+            android:id="@+id/action_basketFragment_to_menuItemDetailsFragment"
+            app:destination="@id/menuItemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/billFragment"
+        android:name="com.core.screens.ui.bill.BillFragment"
+        android:label="Bill"
+        tools:layout="@layout/fragment_bill" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.core.screens.ui.favorites.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_favoritesFragment_to_menuItemDetailsFragment"
+            app:destination="@id/menuItemDetailsFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.core.screens.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_menuItemsFragment"
+            app:destination="@id/menuItemsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.core.screens.ui.more.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_moreFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemsFragment"
+        android:name="com.core.screens.ui.menuitems.MenuItemsFragment"
+        android:label="MenuItemsFragment">
+        <action
+            android:id="@+id/action_menuItemsFragment_to_menuItemDetailsFragment"
+            app:destination="@id/menuItemDetailsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuItemDetailsFragment"
+        android:name="com.core.screens.ui.menuitemdetails.MenuItemDetailsFragment"
+        android:label="MenuItemDetailsFragment" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.core.screens.ui.transaction.TransactionFragment"
+        android:label="TransactionFragment" />
+</navigation>
